@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logica de Programação com JS</title>
+</head>
+<body>
+    <h1>Lógica de programação com Javascript</h1>
+    <script>
+        var n1 = parseInt(prompt("Digite um número"))
+        var n2 = parseInt(prompt("Digite outro número"))
+        var media = (n1 + n2) / 2
+        alert(`A media entre ${n1} e ${n2} é maior que 5? Resposta: ${media > 5}`)
+        /*
+        if(media >= 5 && n1 > 0 && n2 > 0) {
+            alert("Parabéns! Você foi aprovado");
+        } else {
+            alert("Desculpe, mas não foi dessa vez");
+        }
+        */
+        if(n1 === 0 || n2 === 0 || media < 5) {
+            alert("Desculpe, mas não foi dessa vez");
+        } else {
+            alert("Parabéns! Você foi aprovado");
+        }
+    </script>
+</body>
+</html>
