@@ -12,9 +12,21 @@
         var anoEnd = 2025
 
         while(anoStart <= anoEnd) {
-            document.write(anoStart + '<br>')
+            if(anoStart % 4 === 0 && !(anoStart % 100 === 0) || anoStart % 400 === 0) {
+                document.write(anoStart + '<br>')
+            }
             anoStart += 4;
         }
+
+
+        // var n1 = parseInt(prompt('Digite um número'))
+        // var n2 = 4
+        
+        // if(n1 % n2 == 0 && n1 % 100 !== 0) {
+        //     alert(`${n1} é um ano bissesto`)
+        // } else {
+        //     alert(`${n1} não é um ano bissesto`)
+        // }
     </script>
 </body>
 </html>
