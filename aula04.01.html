@@ -14,10 +14,23 @@
     <div id="output"></div>
 
     <script>
+        var output = document.querySelector('#output')
+        var mensagem = ''
+
         function mostrarTabuada() {
-            alert('mostrarTabuada chamada')
+            var num = parseFloat(prompt('Digite um número'))
+            limparTabuada()
+            var i = 1
+            
+            while(i <= 1000) {
+                mensagem += `${num} x ${i} = ${num*i} <br>`
+                i++
+            }
+            output.innerHTML = mensagem
         }
-        mostrarTabuada();
+        function limparTabuada() {
+            output.innerHTML = ''
+        }
     </script>
 </body>
 </html>
