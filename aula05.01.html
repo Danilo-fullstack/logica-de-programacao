@@ -20,10 +20,16 @@
         escreve(n2)
 
         function iniciarCalculo(simbolo) {
-            var n1 = document.querySelector('#output').textContent
+            var n1 = parseFloat(document.querySelector('#output').textContent)
             var n2 = parseFloat(prompt('Digite outro número'))
 
-            var msg = calcular(simbolo, n1, n2)
+            try {
+                var msg = calcular(simbolo, n1, n2)
+            } catch(e) {
+                alert(e)
+                return
+            }
+            
             escreve(msg)
         }
 
@@ -34,13 +40,11 @@
 
         function calcular(simbolo, n1, n2) {
 
-            if(simbolo !== '+' || simbolo !== '-' || simbolo !== '*' || simbolo !== '/') {
-                alert('digite um numero válido')
-                return 0
+            if(simbolo !== '+' && simbolo !== '-' && simbolo !== '*' && simbolo !== '/') {
+                throw new Error('digite um simbolo válido')
             }
-            if(isNaN(n1) || isNaN(n1)){
-                alert('chama passando somente números')
-                return 0
+            if(isNaN(n1) || isNaN(n2)){
+                throw new Error('chama passando somente números')
             }
 
             var numeroCalculado = null
