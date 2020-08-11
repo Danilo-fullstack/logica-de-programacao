@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logica de Programação com JS</title>
+</head>
+<body>
+    <h1>Lógica de programação com Javascript</h1>
+    <button onclick="mostrarDados()">Mostrar Dados</button>
+    <div class="output"></div>
+    <script>
+        function mostrarDados() {
+            var msg = ''
+            msg += 'Nome: ' + produto.nome + '<br>'
+            msg += 'Preço: ' + produto.preco + '<br>'
+            msg += 'Estoque: ' + produto.estoque + '<br>'
+
+            document.querySelector('.output').innerHTML = msg
+        }
+
+        var produto = new Object()
+        produto.nome = 'caneta'
+        produto.preco = 2
+        produto.estoque = 233
+
+        produto.comprar = function(qtd) {
+            if(!qtd) {
+                qtd = 1
+            }
+            console.log('Comprou caneta')
+            this.estoque = this.estoque - qtd
+            console.log(this.estoque)
+        }
+    </script>
+</body>
+</html>
