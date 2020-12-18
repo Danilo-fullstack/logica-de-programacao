@@ -1,0 +1,2 @@
+-Problema - aula07.02_exercicio2.html
+    -Mostrar no output todas as propriedades dos objetos da array "endereços" usando for... in, desde que diferente de undefined
