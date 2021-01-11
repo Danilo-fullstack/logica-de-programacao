@@ -13,6 +13,8 @@
 
         var chamou1 = 0
         var chamou2 = 0
+        var chamou3 = 0
+
 
         function fibonacci(n) {
             chamou1++
@@ -33,6 +35,8 @@
         // console.log(fibonacci(60)) // 8
         console.log('chamou1', chamou1)
 
+
+
         function fibonacci2(n) {
             chamou2++
             if(n <= 2) return 1
@@ -43,6 +47,23 @@
         console.log(fibonacci2(30)) // 2
         // console.log(fibonacci2(60)) // 8
         console.log('chamou2', chamou2)
+
+
+
+        function fibonacci3(n, cache) {
+            chamou3++
+            cache = cache || {}
+            if(cache[n]) return cache[n]
+
+            if(n <= 2) return 1
+            cache[n] = fibonacci3(n - 1, cache) + fibonacci3(n - 2, cache)
+            return cache[n]
+        }
+
+        console.log('---------')
+        console.log(fibonacci3(30))
+        console.log(fibonacci3(60))
+        console.log('chamou3', chamou3)
 
     </script>
 </body>
